@@ -1,0 +1,40 @@
+.page {
+  display: grid;
+  place-items: start center;
+  padding: 24px;
+}
+
+.card {
+  width: min(960px, 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+
+  // Campos ocupam largura total
+  & > mat-form-field {
+    width: 100%;
+  }
+}
+
+/* Responsivo: empilha os campos em telas menores */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview {
+  margin: 8px 0 4px;
+  p {
+    margin: 4px 0;
+  }
+}
+
+/* Opcional: diminuir levemente a densidade dos campos */
+.mat-mdc-form-field {
+  --mat-form-field-container-height: 56px; /* padrão */
+}

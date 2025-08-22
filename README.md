@@ -1,27 +1,102 @@
-# AngularDdMmm
+# 📅 Angular Datepicker - Formato dd/mmm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Este projeto é um exemplo em **Angular 18** com **Angular Material**,
+demonstrando como criar uma tela com **dois campos de data**
+(`Data Inicial` e `Data Final`) onde o usuário escolhe a data
+normalmente, mas o input exibe apenas **dia/mês no formato `dd/mmm`**
+(exemplo: `15/jan`).
 
-## Development server
+------------------------------------------------------------------------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Tecnologias utilizadas
 
-## Code scaffolding
+-   Angular 18 (standalone components + Vite)
+-   Angular Material (Datepicker, Card, FormField, Inputs, Buttons,
+    Icons)
+-   SCSS
+-   Custom `DateAdapter` para parse/format de datas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+------------------------------------------------------------------------
 
-## Build
+## ⚙️ Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+-   Seleção de **Data Inicial** e **Data Final** via Datepicker
+    Material.
+-   Exibição no campo no formato **dd/mmm** (`11/ago`, `23/dez`).
+-   Aceita entrada manual tanto em:
+    -   `dd/mmm` → ex.: `15/jan`, `05/fev`
+    -   `dd/mm` → ex.: `15/01`, `05/02`
+-   O ano é assumido como **ano atual**.
+-   Botão **Salvar** que monta um payload no formato `dd/mmm` e exibe no
+    console (simulando envio ao backend).
+-   Layout com **MatCard** responsivo.
 
-## Running unit tests
+------------------------------------------------------------------------
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📂 Estrutura do projeto
 
-## Running end-to-end tests
+    src/
+     ├── app/
+     │    ├── shared/
+     │    │     └── custom-date-adapter.ts   # DateAdapter customizado
+     │    ├── app.component.ts               # Componente standalone principal
+     │    ├── app.component.html             # Template com Datepickers
+     │    └── app.component.scss             # Estilo da tela
+     ├── index.html                          # Fonte Roboto + Material Icons
+     └── styles.scss                         # Tema Angular Material / estilos globais
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+------------------------------------------------------------------------
 
-## Further help
+## ▶️ Como executar
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Pré-requisitos
+
+-   Node.js 20+
+-   Angular CLI 18+
+
+### Passos
+
+1.  Clone o repositório:
+
+    ``` bash
+    git clone https://github.com/seu-usuario/angular-dd-mmm.git
+    cd angular-dd-mmm
+    ```
+
+2.  Instale as dependências:
+
+    ``` bash
+    npm install
+    ```
+
+3.  Execute em modo desenvolvimento:
+
+    ``` bash
+    ng serve
+    ```
+
+    > A aplicação estará disponível em `http://localhost:4200/`
+
+------------------------------------------------------------------------
+
+## 🖼️ Tela de exemplo
+
+![Exemplo da tela](docs/screenshot.png)
+
+------------------------------------------------------------------------
+
+## 🔧 Ajustes adicionais
+
+-   **Tema Angular Material**: o projeto utiliza `indigo-pink.css`. Caso
+    queira criar um tema customizado, edite `styles.scss`.
+-   **Validação**: é possível adicionar validação de intervalo (ex.:
+    `Data Final >= Data Inicial`) via `FormGroup`.
+-   **Máscara**: se quiser forçar input manual `dd/mmm`, pode usar
+    `ngx-mask`.
+
+------------------------------------------------------------------------
+
+## 📜 Licença
+
+Este projeto é apenas um exemplo de estudo. Livre para uso e
+modificação.
