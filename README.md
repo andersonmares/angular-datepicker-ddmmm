@@ -81,7 +81,7 @@ normalmente, mas o input exibe apenas **dia/mês no formato `dd/mmm`**
 
 ## 🖼️ Tela de exemplo
 
-![Exemplo da tela](docs/screenshot.png)
+![Exemplo da tela](docs/exemplo.jpeg)
 
 ------------------------------------------------------------------------
 
